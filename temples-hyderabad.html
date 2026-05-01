@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Temples of Hyderabad — A Devotee's Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #d97706;
+    --saffron-deep: #b45309;
+    --maroon: #7c2d12;
+    --cream: #fffaf0;
+    --sand: #fdf6e3;
+    --gold: #c9a227;
+    --ink: #1c1917;
+    --muted: #57534e;
+    --border: #e7d8b9;
+    --rush-low: #16a34a;
+    --rush-med: #ca8a04;
+    --rush-high: #dc2626;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  header {
+    background: linear-gradient(135deg, var(--maroon) 0%, var(--saffron-deep) 100%);
+    color: var(--cream);
+    padding: 60px 20px 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: "ॐ";
+    position: absolute;
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-size: 280px;
+    opacity: 0.06;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  header p {
+    font-size: 1.05rem;
+    opacity: 0.92;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .om {
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    font-size: 2rem;
+    margin-bottom: 8px;
+    display: inline-block;
+  }
+
+  nav {
+    background: var(--sand);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  nav a {
+    color: var(--maroon);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+
+  nav a:hover { background: rgba(217, 119, 6, 0.12); }
+
+  main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 50px 20px;
+  }
+
+  section { margin-bottom: 70px; }
+
+  .section-title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--maroon);
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  .section-sub {
+    color: var(--muted);
+    margin-bottom: 30px;
+    font-size: 0.98rem;
+  }
+
+  /* Deities */
+  .deities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .deity-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .deity-card .img-wrap {
+    height: 200px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .deity-card svg { width: 100%; height: 100%; }
+
+  .deity-card .name {
+    padding: 14px 14px 4px;
+    font-weight: 600;
+    color: var(--maroon);
+  }
+
+  .deity-card .desc {
+    padding: 0 14px 16px;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+
+  /* Temple cards */
+  .temples {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .temple {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .temple:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+  }
+
+  .temple-photo {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #fef3c7 0%, #fcd34d 100%);
+  }
+
+  .temple-photo svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .temple-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .temple-body {
+    padding: 22px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .temple h3 {
+    color: var(--maroon);
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+  }
+
+  .temple .deity-line {
+    color: var(--saffron-deep);
+    font-size: 0.88rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .temple .info {
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .temple .meta {
+    display: grid;
+    gap: 8px;
+    font-size: 0.88rem;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+  }
+
+  .temple .meta div {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .temple .meta strong {
+    color: var(--ink);
+    min-width: 78px;
+    font-weight: 600;
+  }
+
+  .crowd-tag {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 12px;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  .crowd-low { background: #dcfce7; color: var(--rush-low); }
+  .crowd-med { background: #fef3c7; color: var(--rush-med); }
+  .crowd-high { background: #fee2e2; color: var(--rush-high); }
+
+  .temple a.tlink {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--saffron-deep);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+
+  .temple a.tlink:hover { text-decoration: underline; }
+
+  /* Festivals */
+  .festival-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+
+  .festival {
+    background: white;
+    border-left: 4px solid var(--saffron);
+    padding: 18px 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+
+  .festival h4 {
+    color: var(--maroon);
+    margin-bottom: 4px;
+    font-size: 1.1rem;
+  }
+
+  .festival .date {
+    color: var(--saffron-deep);
+    font-weight: 600;
+    font-size: 0.92rem;
+    margin-bottom: 8px;
+  }
+
+  .festival p {
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+
+  /* Crowd guide */
+  .crowd-guide {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow-x: auto;
+  }
+
+  .crowd-guide table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+  }
+
+  .crowd-guide th, .crowd-guide td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.93rem;
+  }
+
+  .crowd-guide th {
+    background: var(--sand);
+    color: var(--maroon);
+    font-weight: 600;
+  }
+
+  .crowd-guide tr:last-child td { border-bottom: none; }
+
+  .disclaimer {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #78350f;
+    margin-top: 20px;
+  }
+
+  .disclaimer strong { color: var(--maroon); }
+
+  .photo-note {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    padding: 18px 22px;
+    border-radius: 8px;
+    color: #075985;
+    margin-bottom: 30px;
+    font-size: 0.92rem;
+  }
+
+  .photo-note strong { color: #0c4a6e; }
+
+  .photo-note code {
+    background: #e0f2fe;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'SF Mono', Consolas, monospace;
+    font-size: 0.86rem;
+  }
+
+  footer {
+    background: var(--maroon);
+    color: var(--cream);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+  }
+
+  footer .om { font-size: 1.6rem; opacity: 0.85; }
+
+  @media (max-width: 600px) {
+    nav ul { gap: 6px 14px; }
+    nav a { font-size: 0.88rem; }
+    main { padding: 35px 16px; }
+    .temple-body { padding: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="om">ॐ</span>
+  <h1>Temples of Hyderabad</h1>
+  <p>A guide to the city's most loved temples — with timings, festivals, and the honest truth about when it gets crowded.</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#deities">Deities</a></li>
+    <li><a href="#temples">Temples</a></li>
+    <li><a href="#festivals">Festivals 2026</a></li>
+    <li><a href="#crowd">Crowd Guide</a></li>
+  </ul>
+</nav>
+
+<main>
+
+  <!-- DEITIES -->
+  <section id="deities">
+    <h2 class="section-title">The Deities</h2>
+    <p class="section-sub">A few of the gods worshipped at Hyderabad's temples.</p>
+    <div class="deities">
+
+      <div class="deity-card">
+        <div class="img-wrap">
+          <!-- Sri Rama: figure with bow -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="ramaHalo" cx="50%" cy="35%" r="40%">
+                <stop offset="0%" stop-color="#fde047" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#fde047" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="70" r="55" fill="url(#ramaHalo)"/>
+            <!-- Crown -->
+            <path d="M 75 50 L 80 35 L 90 45 L 100 30 L 110 45 L 120 35 L 125 50 Z" fill="#d97706" stroke="#92400e" stroke-width="1.5"/>
+            <circle cx="100" cy="42" r="2.5" fill="#dc2626"/>
+            <!-- Face -->
+            <ellipse cx="100" cy="68" rx="18" ry="22" fill="#1e3a8a"/>
+            <!-- Tilak -->
+            <path d="M 97 56 L 100 70 L 103 56 Z" fill="#fef3c7"/>
+            <!-- Eyes -->
+            <ellipse cx="93" cy="65" rx="2" ry="1.2" fill="white"/>
+            <ellipse cx="107" cy="65" rx="2" ry="1.2" fill="white"/>
+            <!-- Body -->
+            <path d="M 75 90 Q 100 88 125 90 L 130 160 Q 100 165 70 160 Z" fill="#fbbf24"/>
+            <!-- Bow -->
+            <path d="M 50 70 Q 35 110 50 150" stroke="#7c2d12" stroke-width="2.5" fill="none"/>
+            <line x1="50" y1="70" x2="50" y2="150" stroke="#fef3c7" stroke-width="1"/>
+          </svg>
+        </div>
+        <div class="name">Lord Sri Rama</div>
+        <div class="desc">The seventh avatar of Vishnu, embodiment of dharma and righteousness.</div>
+      </div>
+
+      <div class="deity-card">
+        <div class="img-wrap">
+          <!-- Venkateswara: standing figure with conch and discus -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="venkHalo" cx="50%" cy="40%" r="45%">
+                <stop offset="0%" stop-color="#fde047" stop-opacity="0.95"/>
+                <stop offset="100%" stop-color="#fde047" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="80" r="60" fill="url(#venkHalo)"/>
+            <!-- Tall crown (kireetam) -->
+            <path d="M 78 50 L 82 25 L 100 12 L 118 25 L 122 50 Z" fill="#d97706" stroke="#92400e" stroke-width="1.5"/>
+            <circle cx="100" cy="22" r="2.5" fill="#dc2626"/>
+            <!-- Face -->
+            <ellipse cx="100" cy="72" rx="20" ry="24" fill="#1f2937"/>
+            <!-- Namam (Y-shaped tilak) -->
+            <path d="M 92 58 L 92 78 M 108 58 L 108 78 M 100 62 L 100 82" stroke="#fef3c7" stroke-width="2"/>
+            <path d="M 96 78 Q 100 84 104 78" fill="#fef3c7"/>
+            <!-- Eyes -->
+            <ellipse cx="93" cy="68" rx="2.2" ry="1.3" fill="white"/>
+            <ellipse cx="107" cy="68" rx="2.2" ry="1.3" fill="white"/>
+            <!-- Body / robe -->
+            <path d="M 72 95 Q 100 92 128 95 L 134 170 Q 100 175 66 170 Z" fill="#fbbf24"/>
+            <!-- Conch (left) -->
+            <ellipse cx="65" cy="115" rx="8" ry="10" fill="#fef3c7" stroke="#92400e" stroke-width="1"/>
+            <!-- Discus (right) -->
+            <circle cx="135" cy="115" r="9" fill="#fef3c7" stroke="#92400e" stroke-width="1.5"/>
+            <circle cx="135" cy="115" r="3" fill="#92400e"/>
+          </svg>
+        </div>
+        <div class="name">Lord Venkateswara</div>
+        <div class="desc">Form of Vishnu, also called Balaji. Presiding deity at Tirumala and Chilkur.</div>
+      </div>
+
+      <div class="deity-card">
+        <div class="img-wrap">
+          <!-- Hanuman: monkey-faced figure with mace -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="hanuHalo" cx="50%" cy="35%" r="45%">
+                <stop offset="0%" stop-color="#fcd34d" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#fcd34d" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="75" r="60" fill="url(#hanuHalo)"/>
+            <!-- Head -->
+            <ellipse cx="100" cy="70" rx="24" ry="26" fill="#dc2626"/>
+            <!-- Snout -->
+            <ellipse cx="100" cy="80" rx="11" ry="8" fill="#fbbf24"/>
+            <!-- Eyes -->
+            <ellipse cx="92" cy="65" rx="2.5" ry="2" fill="white"/>
+            <ellipse cx="108" cy="65" rx="2.5" ry="2" fill="white"/>
+            <circle cx="92" cy="65" r="1" fill="#1f2937"/>
+            <circle cx="108" cy="65" r="1" fill="#1f2937"/>
+            <!-- Tilak -->
+            <path d="M 98 55 L 100 65 L 102 55 Z" fill="#fef3c7"/>
+            <!-- Body -->
+            <path d="M 75 95 Q 100 92 125 95 L 130 165 Q 100 170 70 165 Z" fill="#fbbf24"/>
+            <!-- Gada (mace) -->
+            <line x1="155" y1="170" x2="170" y2="60" stroke="#7c2d12" stroke-width="3"/>
+            <ellipse cx="170" cy="55" rx="12" ry="14" fill="#d97706" stroke="#7c2d12" stroke-width="1.5"/>
+            <!-- Tail -->
+            <path d="M 70 130 Q 50 130 45 110 Q 45 95 55 95" stroke="#dc2626" stroke-width="6" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="name">Lord Hanuman</div>
+        <div class="desc">Devotee of Sri Rama, symbol of strength and unwavering devotion.</div>
+      </div>
+
+      <div class="deity-card">
+        <div class="img-wrap">
+          <!-- Mahankali: fierce goddess with trident -->
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="kaliHalo" cx="50%" cy="35%" r="45%">
+                <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <circle cx="100" cy="75" r="60" fill="url(#kaliHalo)"/>
+            <!-- Crown -->
+            <path d="M 78 50 L 85 30 L 92 42 L 100 25 L 108 42 L 115 30 L 122 50 Z" fill="#dc2626" stroke="#7c2d12" stroke-width="1.5"/>
+            <circle cx="100" cy="38" r="2.5" fill="#fde047"/>
+            <!-- Face -->
+            <ellipse cx="100" cy="72" rx="20" ry="24" fill="#7c2d12"/>
+            <!-- Third eye / bindi -->
+            <circle cx="100" cy="62" r="2.5" fill="#dc2626"/>
+            <!-- Eyes -->
+            <ellipse cx="92" cy="70" rx="2.5" ry="1.5" fill="white"/>
+            <ellipse cx="108" cy="70" rx="2.5" ry="1.5" fill="white"/>
+            <!-- Hair flowing -->
+            <path d="M 80 85 Q 65 110 70 140" stroke="#1c1917" stroke-width="4" fill="none"/>
+            <path d="M 120 85 Q 135 110 130 140" stroke="#1c1917" stroke-width="4" fill="none"/>
+            <!-- Body / saree -->
+            <path d="M 75 95 Q 100 92 125 95 L 132 170 Q 100 175 68 170 Z" fill="#dc2626"/>
+            <!-- Trident -->
+            <line x1="40" y1="170" x2="40" y2="50" stroke="#7c2d12" stroke-width="2.5"/>
+            <path d="M 32 50 L 32 35 M 40 50 L 40 30 M 48 50 L 48 35" stroke="#7c2d12" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <div class="name">Goddess Mahankali</div>
+        <div class="desc">Fierce form of Shakti. Worshipped during Bonalu, a festival local to Hyderabad.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TEMPLES -->
+  <section id="temples">
+    <h2 class="section-title">Famous Temples in Hyderabad</h2>
+    <p class="section-sub">Eight of the city's most visited temples, with what we know about timings and crowds.</p>
+
+    <div class="photo-note">
+      <strong>Want to add real temple photos?</strong> Save your photos in the <code>images/</code> folder next to this HTML file using these exact names: <code>birla-mandir.jpg</code>, <code>chilkur-balaji.jpg</code>, <code>jagannath.jpg</code>, <code>karmanghat.jpg</code>, <code>peddamma.jpg</code>, <code>sanghi.jpg</code>, <code>ujjaini.jpg</code>, <code>keesaragutta.jpg</code>. They'll appear automatically. Until then, the illustrations below are shown.
+    </div>
+
+    <div class="temples">
+
+      <!-- Birla Mandir -->
+      <div class="temple">
+        <div class="temple-photo">
+          <!-- White marble temple on hill -->
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="220" fill="#bae6fd"/>
+            <!-- sun -->
+            <circle cx="320" cy="60" r="22" fill="#fde047" opacity="0.85"/>
+            <!-- clouds -->
+            <ellipse cx="80" cy="50" rx="35" ry="10" fill="white" opacity="0.8"/>
+            <ellipse cx="220" cy="40" rx="40" ry="9" fill="white" opacity="0.7"/>
+            <!-- hill -->
+            <path d="M 0 220 L 0 160 Q 200 100 400 160 L 400 220 Z" fill="#86efac"/>
+            <path d="M 0 220 L 0 180 Q 200 140 400 180 L 400 220 Z" fill="#4ade80"/>
+            <!-- temple base -->
+            <rect x="140" y="120" width="120" height="60" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+            <!-- main shikhara -->
+            <path d="M 170 120 L 170 80 Q 170 65 200 50 Q 230 65 230 80 L 230 120 Z" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+            <path d="M 200 50 L 200 35" stroke="#cbd5e1" stroke-width="2"/>
+            <circle cx="200" cy="32" r="4" fill="#fbbf24"/>
+            <!-- side towers -->
+            <path d="M 145 120 L 145 95 Q 145 88 155 80 Q 165 88 165 95 L 165 120 Z" fill="#f8fafc" stroke="#cbd5e1"/>
+            <path d="M 235 120 L 235 95 Q 235 88 245 80 Q 255 88 255 95 L 255 120 Z" fill="#f8fafc" stroke="#cbd5e1"/>
+            <!-- pillars -->
+            <rect x="155" y="135" width="6" height="45" fill="#e2e8f0"/>
+            <rect x="180" y="135" width="6" height="45" fill="#e2e8f0"/>
+            <rect x="214" y="135" width="6" height="45" fill="#e2e8f0"/>
+            <rect x="239" y="135" width="6" height="45" fill="#e2e8f0"/>
+            <!-- entrance -->
+            <path d="M 195 180 L 195 155 Q 200 148 205 155 L 205 180 Z" fill="#7c2d12"/>
+            <!-- steps -->
+            <rect x="170" y="178" width="60" height="3" fill="#cbd5e1"/>
+            <rect x="165" y="183" width="70" height="3" fill="#cbd5e1"/>
+          </svg>
+          <img src="images/birla-mandir.jpg" alt="Birla Mandir" onerror="this.style.display='none'"/>
+        </div>
+        <div class="temple-body">
+          <h3>Birla Mandir</h3>
+          <div class="deity-line">Lord Venkateswara</div>
+          <div class="info">Built entirely of white Rajasthani marble on Naubat Pahad hillock. Completed in 1976. Offers a panoramic view of the city and Hussain Sagar.</div>
+          <div class="meta">
+            <div><strong>Timings:</strong> 7:00 AM – 12:00 PM, 3:00 PM – 9:00 PM (daily)</div>
+            <div><strong>Location:</strong> Naubat Pahad, Khairtabad</div>
+            <div><strong>Rush time:</strong> <span class="crowd-tag crowd-high">Evenings & weekends</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chilkur Balaji -->
+      <div class="temple">
+        <div class="temple-photo">
+          <!-- Temple by lake -->
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="220" fill="#fde68a"/>
+            <!-- sun -->
+            <circle cx="80" cy="55" r="20" fill="#f97316"/>
+            <circle cx="80" cy="55" r="28" fill="#fb923c" opacity="0.4"/>
+            <!-- distant trees -->
+            <ellipse cx="50" cy="135" rx="20" ry="22" fill="#16a34a"/>
+            <ellipse cx="350" cy="130" rx="22" ry="25" fill="#15803d"/>
+            <!-- temple gopuram (south indian style) -->
+            <rect x="150" y="100" width="100" height="60" fill="#fb923c"/>
+            <path d="M 145 100 L 155 80 L 245 80 L 255 100 Z" fill="#ea580c"/>
+            <path d="M 160 80 L 170 60 L 230 60 L 240 80 Z" fill="#fb923c"/>
+            <path d="M 175 60 L 185 45 L 215 45 L 225 60 Z" fill="#ea580c"/>
+            <path d="M 190 45 L 200 30 L 210 45 Z" fill="#fb923c"/>
+            <!-- decorative tiers -->
+            <line x1="160" y1="92" x2="240" y2="92" stroke="#7c2d12" stroke-width="1"/>
+            <line x1="170" y1="72" x2="230" y2="72" stroke="#7c2d12" stroke-width="1"/>
+            <!-- entrance -->
+            <path d="M 190 160 L 190 130 Q 200 122 210 130 L 210 160 Z" fill="#7c2d12"/>
+            <!-- water -->
+            <rect x="0" y="160" width="400" height="60" fill="#0ea5e9"/>
+            <path d="M 0 165 Q 100 170 200 165 T 400 165" stroke="white" stroke-width="1" fill="none" opacity="0.6"/>
+            <path d="M 0 178 Q 100 183 200 178 T 400 178" stroke="white" stroke-width="1" fill="none" opacity="0.5"/>
+            <!-- reflection -->
+            <rect x="150" y="160" width="100" height="20" fill="#fb923c" opacity="0.3"/>
+          </svg>
+          <img src="images/chilkur-balaji.jpg" alt="Chilkur Balaji Temple" onerror="this.style.display='none'"/>
+        </div>
+        <div class="temple-body">
+          <h3>Chilkur Balaji Temple</h3>
+          <div class="deity-line">Lord Balaji (Venkateswara)</div>
+          <div class="info">Known as "Visa Balaji". One of the oldest temples in the region. The temple does not accept any monetary donations and has no VIP queue.</div>
+          <div class="meta">
+            <div><strong>Timings:</strong> 5:00 AM – 8:00 PM (daily)</div>
+            <div><strong>Location:</strong> Chilkur Village, ~30 km from Mehdipatnam</div>
+            <div><strong>Rush time:</strong> <span class="crowd-tag crowd-high">Fridays & Sundays</span></div>
+            <a class="tlink" href="http://www.chilkurbalaji.com/" target="_blank" rel="noopener">Official website →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jagannath Temple -->
+      <div class="temple">
+        <div class="temple-photo">
+          <!-- Tall temple with rounded shikhara (Odisha style) -->
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="220" fill="#fed7aa"/>
+            <circle cx="340" cy="50" r="18" fill="#fbbf24"/>
+            <!-- ground -->
+            <rect x="0" y="180" width="400" height="40" fill="#fde68a"/>
+            <!-- main rounded tower -->
+            <path d="M 165 180 L 165 100 Q 165 50 200 25 Q 235 50 235 100 L 235 180 Z" fill="#dc2626"/>
+            <path d="M 175 180 L 175 110 Q 175 70 200 50 Q 225 70 225 110 L 225 180 Z" fill="#b91c1c" opacity="0.5"/>
+            <!-- horizontal bands -->
+            <line x1="170" y1="115" x2="230" y2="115" stroke="#7f1d1d" stroke-width="1.5"/>
+            <line x1="170" y1="135" x2="230" y2="135" stroke="#7f1d1d" stroke-width="1.5"/>
+            <line x1="170" y1="155" x2="230" y2="155" stroke="#7f1d1d" stroke-width="1.5"/>
+            <!-- top finial -->
+            <line x1="200" y1="25" x2="200" y2="10" stroke="#fbbf24" stroke-width="2"/>
+            <circle cx="200" cy="8" r="4" fill="#fbbf24"/>
+            <!-- side mandapas -->
+            <rect x="120" y="140" width="50" height="40" fill="#dc2626"/>
+            <path d="M 115 140 L 145 110 L 175 140 Z" fill="#b91c1c"/>
+            <rect x="230" y="140" width="50" height="40" fill="#dc2626"/>
+            <path d="M 225 140 L 255 110 L 285 140 Z" fill="#b91c1c"/>
+            <!-- entrance -->
+            <path d="M 192 180 L 192 155 Q 200 148 208 155 L 208 180 Z" fill="#1f2937"/>
+            <!-- flag -->
+            <line x1="200" y1="8" x2="200" y2="-5" stroke="#7c2d12" stroke-width="1"/>
+            <path d="M 200 0 L 215 5 L 200 10 Z" fill="#fde047"/>
+          </svg>
+          <img src="images/jagannath.jpg" alt="Jagannath Temple" onerror="this.style.display='none'"/>
+        </div>
+        <div class="temple-body">
+          <h3>Jagannath Temple</h3>
+          <div class="deity-line">Lord Jagannath, Balabhadra, Subhadra</div>
+          <div class="info">Built in 2009 by the Odia community in Hyderabad. Modeled after the Puri Jagannath Temple. Famous for its annual Rath Yatra.</div>
+          <div class="meta">
+            <div><strong>Timings:</strong> 5:00 AM – 1:00 PM, 3:00 PM – 8:00 PM (daily, may vary)</div>
+            <div><strong>Location:</strong> Banjara Hills, Road No. 12</div>
+            <div><strong>Rush time:</strong> <span class="crowd-tag crowd-med">Weekends, Rath Yatra</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Karmanghat Hanuman -->
+      <div class="temple">
+        <div class="temple-photo">
+          <!-- Older stone temple with banner -->
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="220" fill="#fef3c7"/>
+            <!-- distant hills -->
+            <path d="M 0 180 Q 100 140 200 165 Q 300 140 400 175 L 400 180 Z" fill="#a16207" opacity="0.4"/>
+            <!-- ground -->
+            <rect x="0" y="180" width="400" height="40" fill="#fcd34d"/>
+            <!-- temple structure -->
+            <rect x="140" y="120" width="120" height="60" fill="#fbbf24" stroke="#92400e" stroke-width="1.5"/>
+            <!-- pyramidal tower -->
+            <path d="M 145 120 L 155 95 L 245 95 L 255 120 Z" fill="#d97706"/>
+            <path d="M 165 95 L 175 75 L 225 75 L 235 95 Z" fill="#b45309"/>
+            <path d="M 185 75 L 195 55 L 205 55 L 215 75 Z" fill="#d97706"/>
+            <!-- finial -->
+            <path d="M 195 55 L 200 40 L 205 55 Z" fill="#92400e"/>
+            <line x1="200" y1="40" x2="200" y2="28" stroke="#92400e" stroke-width="1.5"/>
+            <circle cx="200" cy="26" r="3" fill="#fde047"/>
+            <!-- saffron flag -->
+            <line x1="200" y1="40" x2="200" y2="20" stroke="#92400e" stroke-width="1"/>
+            <path d="M 200 22 L 218 28 L 200 35 Z" fill="#ea580c"/>
+            <!-- pillars -->
+            <rect x="148" y="135" width="6" height="45" fill="#92400e"/>
+            <rect x="246" y="135" width="6" height="45" fill="#92400e"/>
+            <!-- entrance -->
+            <path d="M 188 180 L 188 145 Q 200 135 212 145 L 212 180 Z" fill="#451a03"/>
+            <!-- step -->
+            <rect x="170" y="178" width="60" height="3" fill="#92400e"/>
+            <rect x="160" y="183" width="80" height="3" fill="#92400e"/>
+            <!-- decorative carvings -->
+            <circle cx="170" cy="150" r="4" fill="#fef3c7"/>
+            <circle cx="230" cy="150" r="4" fill="#fef3c7"/>
+          </svg>
+          <img src="images/karmanghat.jpg" alt="Karmanghat Hanuman Temple" onerror="this.style.display='none'"/>
+        </div>
+        <div class="temple-body">
+          <h3>Karmanghat Hanuman Temple</h3>
+          <div class="deity-line">Lord Hanuman</div>
+          <div class="info">An ancient temple dating back to the Kakatiya era (around the 12th century). Known for the powerful Hanuman idol in a seated posture.</div>
+          <div class="meta">
+            <div><strong>Timings:</strong> 6:00 AM – 1:00 PM, 3:00 PM – 8:00 PM (daily)</div>
+            <div><strong>Location:</strong> Karmanghat, near LB Nagar</div>
+            <div><strong>Rush time:</strong> <span class="crowd-tag crowd-high">Tuesdays & Saturdays</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peddamma Temple -->
+      <div class="temple">
+        <div class="temple-photo">
+          <!-- Goddess temple with red and yellow gopuram -->
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="220" fill="#fecaca"/>
+            <circle cx="60" cy="50" r="18" fill="#fbbf24"/>
+            <!-- ground -->
+            <rect x="0" y="180" width="400" height="40" fill="#fca5a5"/>
+            <!-- gopuram -->
+            <rect x="155" y="115" width="90" height="65" fill="#dc2626"/>
+            <path d="M 150 115 L 158 95 L 242 95 L 250 115 Z" fill="#fbbf24"/>
+            <path d="M 165 95 L 173 78 L 227 78 L 235 95 Z" fill="#dc2626"/>
+            <path d="M 178 78 L 186 60 L 214 60 L 222 78 Z" fill="#fbbf24"/>
+            <path d="M 190 60 L 200 45 L 210 60 Z" fill="#dc2626"/>
+            <!-- bands of decoration -->
+            <line x1="160" y1="108" x2="240" y2="108" stroke="#fbbf24" stroke-width="1.5"/>
+            <line x1="170" y1="88" x2="230" y2="88" stroke="#dc2626" stroke-width="1.5"/>
+            <!-- finial -->
+            <line x1="200" y1="45" x2="200" y2="32" stroke="#92400e" stroke-width="1.5"/>
+            <circle cx="200" cy="30" r="3" fill="#fde047"/>
+            <!-- entrance -->
+            <path d="M 188 180 L 188 145 Q 200 138 212 145 L 212 180 Z" fill="#fde047"/>
+            <!-- decorative dots -->
+            <circle cx="170" cy="130" r="3" fill="#fde047"/>
+            <circle cx="230" cy="130" r="3" fill="#fde047"/>
+            <circle cx="170" cy="160" r="3" fill="#fde047"/>
+            <circle cx="230" cy="160" r="3" fill="#fde047"/>
+            <!-- garland on gate -->
+            <path d="M 188 145 Q 200 152 212 145" stroke="#fde047" stroke-width="2" fill="none"/>
+          </svg>
+          <img src="images/peddamma.jpg" alt="Peddamma Temple" onerror="this.style.display='none'"/>
+        </div>
+        <div class="temple-body">
+          <h3>Peddamma Temple</h3>
+          <div class="deity-line">Goddess Peddamma (Shakti)</div>
+          <div class="info">A revered temple in Jubilee Hills. The Bonalu festival here draws huge crowds. "Peddamma" means "mother of mothers" in Telugu.</div>
+          <div class="meta">
+            <div><strong>Timings:</strong> 5:30 AM – 1:00 PM, 4:00 PM – 9:00 PM (daily)</div>
+            <div><strong>Location:</strong> Jubilee Hills, Road No. 55</div>
+            <div><strong>Rush time:</strong> <span class="crowd-tag crowd-high">Sundays, Bonalu (Jul-Aug)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sanghi Temple -->
+      <div class="temple">
+        <div class="temple-photo">
+          <!-- Hilltop temple with grand gopuram -->
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="220" fill="#fde68a"/>
+            <!-- hill -->
+            <path d="M 0 220 L 0 170 Q 100 130 200 125 Q 300 130 400 170 L 400 220 Z" fill="#84cc16"/>
+            <path d="M 0 220 L 0 185 Q 200 160 400 185 L 400 220 Z" fill="#65a30d"/>
+            <!-- temple platform -->
+            <rect x="120" y="115" width="160" height="50" fill="#facc15"/>
+            <!-- huge gopuram -->
+            <rect x="155" y="80" width="90" height="35" fill="#fbbf24"/>
+            <path d="M 150 80 L 160 65 L 240 65 L 250 80 Z" fill="#f59e0b"/>
+            <path d="M 165 65 L 175 50 L 225 50 L 235 65 Z" fill="#fbbf24"/>
+            <path d="M 180 50 L 188 35 L 212 35 L 220 50 Z" fill="#f59e0b"/>
+            <path d="M 192 35 L 200 22 L 208 35 Z" fill="#fbbf24"/>
+            <line x1="200" y1="22" x2="200" y2="10" stroke="#92400e" stroke-width="1.5"/>
+            <circle cx="200" cy="8" r="3" fill="#dc2626"/>
+            <!-- horizontal lines -->
+            <line x1="160" y1="75" x2="240" y2="75" stroke="#92400e" stroke-width="1"/>
+            <line x1="170" y1="60" x2="230" y2="60" stroke="#92400e" stroke-width="1"/>
+            <!-- pillars -->
+            <rect x="135" y="120" width="8" height="45" fill="#a16207"/>
+            <rect x="160" y="120" width="8" height="45" fill="#a16207"/>
+            <rect x="232" y="120" width="8" height="45" fill="#a16207"/>
+            <rect x="257" y="120" width="8" height="45" fill="#a16207"/>
+            <!-- gate -->
+            <path d="M 185 165 L 185 130 Q 200 122 215 130 L 215 165 Z" fill="#451a03"/>
+            <!-- steps -->
+            <rect x="120" y="163" width="160" height="3" fill="#a16207"/>
+            <rect x="110" y="168" width="180" height="3" fill="#a16207"/>
+            <rect x="100" y="173" width="200" height="3" fill="#a16207"/>
+          </svg>
+          <img src="images/sanghi.jpg" alt="Sanghi Temple" onerror="this.style.display='none'"/>
+        </div>
+        <div class="temple-body">
+          <h3>Sanghi Temple</h3>
+          <div class="deity-line">Lord Venkateswara</div>
+          <div class="info">Sits on Paramanand Giri hill, about 35 km from Hyderabad. The Raja Gopuram is visible from a distance. Architecture inspired by Chola and Chalukya styles.</div>
+          <div class="meta">
+            <div><strong>Timings:</strong> 8:00 AM – 1:00 PM, 4:00 PM – 8:00 PM (daily)</div>
+            <div><strong>Location:</strong> Sanghi Nagar, Hayathnagar</div>
+            <div><strong>Rush time:</strong> <span class="crowd-tag crowd-med">Weekends</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ujjaini Mahankali -->
+      <div class="temple">
+        <div class="temple-photo">
+          <!-- Goddess temple with banners -->
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="220" fill="#fed7aa"/>
+            <circle cx="340" cy="55" r="18" fill="#f97316"/>
+            <!-- ground -->
+            <rect x="0" y="180" width="400" height="40" fill="#fdba74"/>
+            <!-- temple body -->
+            <rect x="145" y="110" width="110" height="70" fill="#dc2626"/>
+            <!-- gopuram tiers -->
+            <path d="M 140 110 L 150 90 L 250 90 L 260 110 Z" fill="#7f1d1d"/>
+            <path d="M 158 90 L 168 72 L 232 72 L 242 90 Z" fill="#dc2626"/>
+            <path d="M 175 72 L 185 55 L 215 55 L 225 72 Z" fill="#7f1d1d"/>
+            <path d="M 188 55 L 200 38 L 212 55 Z" fill="#dc2626"/>
+            <!-- finial -->
+            <line x1="200" y1="38" x2="200" y2="22" stroke="#fde047" stroke-width="2"/>
+            <circle cx="200" cy="20" r="4" fill="#fde047"/>
+            <!-- decorative bands -->
+            <line x1="155" y1="103" x2="245" y2="103" stroke="#fde047" stroke-width="1"/>
+            <line x1="165" y1="83" x2="235" y2="83" stroke="#fde047" stroke-width="1"/>
+            <!-- entrance -->
+            <path d="M 187 180 L 187 140 Q 200 132 213 140 L 213 180 Z" fill="#1f2937"/>
+            <!-- saffron flags on sides -->
+            <line x1="155" y1="110" x2="155" y2="65" stroke="#451a03" stroke-width="1.5"/>
+            <path d="M 155 65 L 175 70 L 155 78 Z" fill="#ea580c"/>
+            <line x1="245" y1="110" x2="245" y2="65" stroke="#451a03" stroke-width="1.5"/>
+            <path d="M 245 65 L 225 70 L 245 78 Z" fill="#ea580c"/>
+            <!-- carved lions/decoration -->
+            <rect x="158" y="155" width="14" height="20" fill="#fde047" rx="2"/>
+            <rect x="228" y="155" width="14" height="20" fill="#fde047" rx="2"/>
+          </svg>
+          <img src="images/ujjaini.jpg" alt="Ujjaini Mahankali Temple" onerror="this.style.display='none'"/>
+        </div>
+        <div class="temple-body">
+          <h3>Ujjaini Mahankali Temple</h3>
+          <div class="deity-line">Goddess Mahankali</div>
+          <div class="info">The most famous Bonalu temple in Hyderabad. Located in Secunderabad. Lakhs of devotees visit during the Ashada Bonalu month.</div>
+          <div class="meta">
+            <div><strong>Timings:</strong> 4:30 AM – 1:00 PM, 3:00 PM – 9:00 PM (daily, may vary)</div>
+            <div><strong>Location:</strong> Secunderabad, near General Bazaar</div>
+            <div><strong>Rush time:</strong> <span class="crowd-tag crowd-high">Bonalu (Jul-Aug), Sundays</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Keesaragutta -->
+      <div class="temple">
+        <div class="temple-photo">
+          <!-- Hilltop Shiva temple -->
+          <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+            <rect width="400" height="220" fill="#bfdbfe"/>
+            <!-- moon -->
+            <circle cx="320" cy="50" r="16" fill="#f8fafc"/>
+            <circle cx="324" cy="48" r="14" fill="#bfdbfe"/>
+            <!-- big rocky hill -->
+            <path d="M 0 220 L 0 150 Q 80 100 160 110 Q 200 80 240 105 Q 320 95 400 145 L 400 220 Z" fill="#a8a29e"/>
+            <path d="M 0 220 L 0 175 Q 100 140 200 150 Q 300 140 400 170 L 400 220 Z" fill="#78716c"/>
+            <!-- rock textures -->
+            <ellipse cx="100" cy="170" rx="15" ry="6" fill="#57534e" opacity="0.4"/>
+            <ellipse cx="280" cy="160" rx="18" ry="7" fill="#57534e" opacity="0.4"/>
+            <!-- temple on top -->
+            <rect x="170" y="80" width="60" height="35" fill="#facc15"/>
+            <path d="M 165 80 L 175 65 L 225 65 L 235 80 Z" fill="#eab308"/>
+            <path d="M 180 65 L 190 50 L 210 50 L 220 65 Z" fill="#facc15"/>
+            <path d="M 192 50 L 200 38 L 208 50 Z" fill="#eab308"/>
+            <line x1="200" y1="38" x2="200" y2="25" stroke="#92400e" stroke-width="1.5"/>
+            <!-- trishul on top -->
+            <line x1="200" y1="25" x2="200" y2="10" stroke="#92400e" stroke-width="1.5"/>
+            <path d="M 195 12 L 195 5 M 200 10 L 200 2 M 205 12 L 205 5" stroke="#92400e" stroke-width="1.5"/>
+            <!-- entrance -->
+            <path d="M 192 115 L 192 95 Q 200 90 208 95 L 208 115 Z" fill="#451a03"/>
+            <!-- steps cut into hill -->
+            <line x1="155" y1="130" x2="245" y2="130" stroke="#57534e" stroke-width="2"/>
+            <line x1="145" y1="145" x2="255" y2="145" stroke="#57534e" stroke-width="2"/>
+            <line x1="135" y1="160" x2="265" y2="160" stroke="#57534e" stroke-width="2"/>
+            <!-- trees -->
+            <ellipse cx="40" cy="160" rx="18" ry="20" fill="#15803d"/>
+            <ellipse cx="370" cy="160" rx="16" ry="18" fill="#166534"/>
+          </svg>
+          <img src="images/keesaragutta.jpg" alt="Keesaragutta Temple" onerror="this.style.display='none'"/>
+        </div>
+        <div class="temple-body">
+          <h3>Keesaragutta Temple</h3>
+          <div class="deity-line">Sri Ramalingeswara Swamy (Lord Shiva)</div>
+          <div class="info">A hilltop temple about 35 km from the city. Believed to have been visited by Lord Rama. Maha Shivaratri here is celebrated on a massive scale.</div>
+          <div class="meta">
+            <div><strong>Timings:</strong> 6:00 AM – 12:45 PM, 3:00 PM – 7:30 PM (daily)</div>
+            <div><strong>Location:</strong> Keesara, Medchal-Malkajgiri district</div>
+            <div><strong>Rush time:</strong> <span class="crowd-tag crowd-high">Mondays, Maha Shivaratri</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="disclaimer">
+      <strong>Heads up:</strong> Temple timings can change on festivals, eclipses, and special pujas. Before you visit, check with the temple directly or call ahead. The official website link above (Chilkur) is the safest source.
+    </div>
+  </section>
+
+  <!-- FESTIVALS -->
+  <section id="festivals">
+    <h2 class="section-title">Hindu Festivals — 2026 Dates</h2>
+    <p class="section-sub">Major festivals celebrated across Hyderabad's temples this year.</p>
+
+    <div class="festival-grid">
+      <div class="festival">
+        <h4>Makar Sankranti</h4>
+        <div class="date">January 14, 2026 (Wed)</div>
+        <p>Marks the sun's transit into Capricorn. Celebrated as Pongal in the south.</p>
+      </div>
+      <div class="festival">
+        <h4>Maha Shivaratri</h4>
+        <div class="date">February 15, 2026 (Sun)</div>
+        <p>The night of Lord Shiva. Devotees fast and stay awake. Keesaragutta and other Shiva temples are packed.</p>
+      </div>
+      <div class="festival">
+        <h4>Holi</h4>
+        <div class="date">March 4, 2026 (Wed)</div>
+        <p>Festival of colours. Holika Dahan is observed the previous evening.</p>
+      </div>
+      <div class="festival">
+        <h4>Ugadi</h4>
+        <div class="date">March 19, 2026 (Thu)</div>
+        <p>Telugu and Kannada New Year. Chaitra Navratri also begins on this day.</p>
+      </div>
+      <div class="festival">
+        <h4>Sri Rama Navami</h4>
+        <div class="date">March 26, 2026 (Thu)</div>
+        <p>Birth of Lord Rama. Big celebrations at Bhadrachalam and at Rama temples across Hyderabad.</p>
+      </div>
+      <div class="festival">
+        <h4>Hanuman Jayanti</h4>
+        <div class="date">April 2, 2026 (Thu)</div>
+        <p>Birth of Lord Hanuman. Karmanghat Hanuman Temple is especially crowded.</p>
+      </div>
+      <div class="festival">
+        <h4>Bonalu</h4>
+        <div class="date">July – August 2026</div>
+        <p>A festival unique to Telangana, dedicated to Goddess Mahankali. Celebrated through the month of Ashada.</p>
+      </div>
+      <div class="festival">
+        <h4>Krishna Janmashtami</h4>
+        <div class="date">August 2026 (date varies regionally)</div>
+        <p>Birth of Lord Krishna. ISKCON temples celebrate with midnight aartis.</p>
+      </div>
+      <div class="festival">
+        <h4>Ganesh Chaturthi</h4>
+        <div class="date">September 2026 (Bhadrapada Shukla Chaturthi)</div>
+        <p>Hyderabad is famous for the Khairatabad Ganesh — one of the tallest idols in India.</p>
+      </div>
+      <div class="festival">
+        <h4>Sharad Navratri & Dussehra</h4>
+        <div class="date">October 11 – 20, 2026</div>
+        <p>Nine nights of Goddess Durga, ending on Dussehra (Vijayadashami) on October 20.</p>
+      </div>
+      <div class="festival">
+        <h4>Karva Chauth</h4>
+        <div class="date">October 29, 2026 (Thu)</div>
+        <p>Married women fast for the well-being of their husbands.</p>
+      </div>
+      <div class="festival">
+        <h4>Diwali</h4>
+        <div class="date">November 8, 2026 (Sun)</div>
+        <p>Festival of lights. Five-day celebration: Dhanteras (Nov 6), Diwali (Nov 8), Govardhan Puja (Nov 10), Bhai Dooj (Nov 11).</p>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>About these dates:</strong> Hindu festival dates follow the lunar calendar and can shift by a day depending on the regional Panchang. The dates above are based on widely-accepted 2026 Panchang sources but may differ slightly by region. For Bonalu and Janmashtami the exact dates depend on local tradition — check with your temple.
+    </div>
+  </section>
+
+  <!-- CROWD GUIDE -->
+  <section id="crowd">
+    <h2 class="section-title">When It Gets Crowded</h2>
+    <p class="section-sub">General patterns to plan around. These are not real-time crowd levels — just typical patterns based on temple traditions and what regular visitors report.</p>
+
+    <div class="crowd-guide">
+      <table>
+        <thead>
+          <tr>
+            <th>Day / Time</th>
+            <th>What to expect</th>
+            <th>Level</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Weekday mornings (6 – 8 AM)</td>
+            <td>Quietest time. Best for a peaceful darshan, especially at Birla Mandir and Chilkur.</td>
+            <td><span class="crowd-tag crowd-low">Low</span></td>
+          </tr>
+          <tr>
+            <td>Weekday afternoons (12 – 3 PM)</td>
+            <td>Most temples close for some hours. Plan around this.</td>
+            <td><span class="crowd-tag crowd-low">Closed</span></td>
+          </tr>
+          <tr>
+            <td>Weekday evenings (5 – 8 PM)</td>
+            <td>Steady flow. Aarti times can get a bit heavy.</td>
+            <td><span class="crowd-tag crowd-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Saturdays</td>
+            <td>Busy across the board. Hanuman temples especially.</td>
+            <td><span class="crowd-tag crowd-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Sundays</td>
+            <td>The busiest day at most Hyderabad temples. Long queues at Chilkur.</td>
+            <td><span class="crowd-tag crowd-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Tuesdays</td>
+            <td>Hanuman temples (Karmanghat, Akashpuri) see big crowds.</td>
+            <td><span class="crowd-tag crowd-high">High</span></td>
+          </tr>
+          <tr>
+            <td>Mondays</td>
+            <td>Shiva temples like Keesaragutta get heavy traffic.</td>
+            <td><span class="crowd-tag crowd-med">Medium</span></td>
+          </tr>
+          <tr>
+            <td>Festival days</td>
+            <td>Expect very long waits — sometimes 3+ hours. Maha Shivaratri, Bonalu, and Sri Rama Navami are the most crowded.</td>
+            <td><span class="crowd-tag crowd-high">Very High</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Quick tip:</strong> If you can only go on a weekend, arriving right when the temple opens (5 – 6 AM) usually means you're out before the rush starts.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="om">ॐ</div>
+  <p>Temples of Hyderabad — built as a guide for devotees and visitors.</p>
+  <p style="opacity:0.7; margin-top:6px; font-size:0.82rem;">All temple timings and festival dates are as accurate as we could verify from public sources. Please confirm with the temple before your visit.</p>
+</footer>
+
+</body>
+</html>
